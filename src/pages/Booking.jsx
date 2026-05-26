@@ -210,11 +210,7 @@ export default function Booking() {
                 {loading ? "Skickar..." : "Skicka bokning"}
               </button>
 
-              <p className="text-xs text-center opacity-70">
-                Öppettider:<br />
-                Tors–Fre 10:30–15:00 · Fre kväll 17:00–21:00 ·
-                Lör 11:00–21:00 · Sön 10:00–15:00
-              </p>
+            
 
             </form>
           )}

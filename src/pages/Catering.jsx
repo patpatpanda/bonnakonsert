@@ -46,7 +46,7 @@ export default function Catering() {
                   behavior: "smooth",
                 })
               }
-              className="bg-[#f8a109] text-white font-semibold text-lg px-6 py-2 rounded-lg shadow hover:bg-[#d87d00] transition"
+              className="bg-[#fbbf04] text-white font-semibold text-lg px-6 py-2 rounded-lg shadow hover:bg-[#fbbf04] transition"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -61,7 +61,7 @@ export default function Catering() {
 
        {/* === Introsektion med animerad text och bakgrund === */}
 <motion.section
-  className="relative mb-24 py-16 px-6 bg-[#fff8ec]/80 rounded-2xl border border-[#e2c6a3] shadow-[0_4px_20px_rgba(91,58,41,0.1)] overflow-hidden"
+  className="relative mb-24 py-16 px-6 bg-[#fff8ec]/80 rounded-2xl border border-[#fbbf04] shadow-[0_4px_20px_rgba(91,58,41,0.1)] overflow-hidden"
   initial={{ opacity: 0, y: 30 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ duration: 0.8, ease: "easeOut" }}
@@ -97,15 +97,6 @@ export default function Catering() {
     Vi gillar bra käk och vi är noga med det vi lagar. Säg bara till vad ni har på gång, så styr vi ihop något som passar ert gäng – på vårt sätt, rätt ifrån gården 🤠
     </motion.p>
 
-   <Link to="/cateringbooking">
-  <motion.button
-    className="bg-[#f8a109] text-white font-semibold text-lg px-8 py-3 rounded-full shadow hover:bg-[#d87d00] transition"
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.95 }}
-  >
-    Skicka cateringförfrågan
-  </motion.button>
-</Link>
   </div>
 </motion.section>
 
@@ -145,7 +136,7 @@ export default function Catering() {
  {/* Rubrikskylt */}
 <div
   className="absolute -top-10 left-1/2 -translate-x-1/2 
-  bg-[#f8a109] text-white px-10 py-3 
+  bg-[#fbbf04] text-white px-10 py-3 
   rounded-full font-rye text-2xl 
   shadow-[0_4px_10px_rgba(0,0,0,0.25)] 
   border-2 border-[#d88b00] 
@@ -191,7 +182,7 @@ export default function Catering() {
 <motion.section
   id="caesar"
   className="mb-60 scroll-mt-10 relative max-w-3xl mx-auto 
-             rounded-[1rem] border border-[#ead8b8] 
+             rounded-[1rem] border border-[#fbbf04] 
              bg-gradient-to-b from-[#fffefb] to-[#fff9f0] 
              shadow-[0_10px_30px_rgba(91,58,41,0.07)]"
   initial={{ opacity: 0, y: 40 }}
@@ -203,7 +194,7 @@ export default function Catering() {
   <div
   className="
     absolute -top-6 left-1/2 -translate-x-1/2 
-    bg-[#f8a109] text-white 
+    bg-[#fbbf04] text-white 
     px-4 py-1               /* Mobil: tunn */
     md:px-8 md:py-2         /* Desktop: större och lyxigare */
     rounded-xl 
@@ -212,7 +203,7 @@ export default function Catering() {
     shadow-md 
     border border-[#d88b00]
     transform rotate-[-1deg]
-    bg-gradient-to-r from-[#f8a109] to-[#e89500]
+    bg-gradient-to-r from-[#fbbf04] to-[#fbbf04]
   "
 >
   Caesarsallad á la Bonnatösen
@@ -258,7 +249,7 @@ export default function Catering() {
   rounded-full font-rye shadow-md 
   border-2 border-[#d88b00]
   transform rotate-[1deg]
-  bg-gradient-to-r from-[#f8a109] to-[#e89500]
+  bg-gradient-to-r from-[#fbbf04] to-[#e89500]
 ">
   Tex-Mex-plock
 </div>
@@ -290,7 +281,7 @@ export default function Catering() {
   transition={{ duration: 0.7, delay: 0.25, ease: "easeOut" }}
   viewport={{ once: true, amount: 0.3 }}
 >
-  <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#f8a109] text-white px-6 py-2 rounded-full font-rye text-xl shadow">
+  <div className="absolute -top-5 left-1/2 -translate-x-1/2 bg-[#fbbf04] text-white px-6 py-2 rounded-full font-rye text-xl shadow">
     Korv
   </div>
 

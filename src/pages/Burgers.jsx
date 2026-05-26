@@ -1,136 +1,219 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import ladaImg from "../assets/lada.png";
-import liggandeImg from "../assets/Liggande.png"; // ändra om den heter .jpg etc.
-
+import { motion } from "framer-motion";
+import ladaImg from "../assets/hero1.webp";
+import liggandeImg from "../assets/Liggande.png";
+import hero2 from "../assets/hero2.webp";
+import hanna from "../assets/hanna.png";
 
 export default function Burgers() {
-  return (
-    <div className="min-h-screen bg-[#fdf8f3] text-[#3a2a1d] flex flex-col items-center p-8">
-      <div className="max-w-4xl w-full mt-12">
+  const [activeImage, setActiveImage] = useState(null);
 
-        {/* Tillbaka */}
+  return (
+    <div className="min-h-screen bg-[#fdf8f3] text-[#3a2a1d]">
+      {/* HERO */}
+      <section className="relative min-h-[75vh] md:min-h-[92vh] bg-black overflow-hidden flex items-center justify-center">
+        <img
+          src={hero2}
+          alt="Bonnatösens Lada"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+
+        <div className="absolute inset-0 bg-black/45" />
+
         <Link
           to="/"
-          className="inline-block mb-6 text-[#5b3a29] hover:text-[#f8a109] font-semibold transition-colors duration-200"
+          className="absolute top-6 left-5 md:top-10 md:left-10 z-10 text-white hover:text-[#f8c04d] font-semibold transition-colors duration-200"
         >
           ← Tillbaka
         </Link>
 
-        {/* Titel */}
-        <h1 className="text-6xl font-rye text-center text-[#f8a109] mb-8 drop-shadow-sm">
-          Bonnatösens Lada
-        </h1>
+        <div className="relative z-10 text-center px-5 max-w-5xl mx-auto">
+          <p className="uppercase tracking-[0.35em] text-[#f8c04d] font-semibold text-xs md:text-sm mb-4">
+            Sommaren 2026
+          </p>
+
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-rye text-white drop-shadow-2xl mb-6">
+            Bonnatösens Lada
+          </h1>
+
+          <div className="inline-block bg-[#f8a109] text-[#2b1b10] px-5 py-3 md:px-8 md:py-4 rounded-2xl shadow-xl border border-white/20 mb-6">
+            <p className="text-2xl md:text-4xl font-rye">
+              Ladan öppnar 27 juni
+            </p>
+          </div>
+
+          <p className="text-white text-lg md:text-2xl max-w-3xl mx-auto leading-relaxed drop-shadow-lg">
+            Hela sommaren fylls ladan med burgare, musik, människor och skön
+            stämning ute på gården i Järnboås.
+          </p>
+        </div>
+      </section>
+
+      {/* CONTENT */}
+      <main className="max-w-6xl mx-auto px-4 md:px-8 py-12 md:py-20">
+        {/* Öppettider */}
+        <section className="bg-white border border-[#e2c9a7] rounded-3xl shadow-xl p-6 md:p-10 mb-12 md:mb-20 -mt-20 relative z-20">
+          <div className="grid lg:grid-cols-[1fr_1.3fr] gap-8 items-center">
+            <div className="bg-[#fff5e8] border border-[#f1c07b] rounded-2xl p-6 md:p-8 text-center">
+              <p className="uppercase tracking-[0.25em] text-[#c57a00] font-semibold text-xs mb-3">
+                Premiär
+              </p>
+
+              <h2 className="text-4xl md:text-5xl font-rye text-[#f8a109] leading-tight">
+                27 juni
+              </h2>
+
+              <p className="mt-4 text-[#5b3a29] text-lg">
+                Då öppnar ladan för sommaren.
+              </p>
+            </div>
+
+            <div className="space-y-4 text-center lg:text-left">
+              <h2 className="text-3xl md:text-4xl font-rye text-[#5b3a29]">
+                När har ladan öppet?
+              </h2>
+
+              <p className="text-lg leading-relaxed">
+                Vi håller öppet under sommarsäsongen och uppdaterar alltid
+                aktuella öppettider via våra sociala medier.
+              </p>
+
+              <p className="text-lg leading-relaxed">
+                Under vintern kan det även dyka upp enstaka event i ladan –
+                håll utkik för kommande datum och aktiviteter.
+              </p>
+
+              <p className="text-lg leading-relaxed">
+                Vill du hyra ladan för ett företagsevent eller något kul med
+                vännerna? Hör av er så kollar vi möjligheterna.
+              </p>
+            </div>
+          </div>
+        </section>
 
         {/* Ingress */}
-        <p className="text-xl text-center text-[#4b3728] max-w-3xl mx-auto leading-relaxed mb-16">
-          Bonnatösens Burgare började ute på vår gård i Järnboås. Det var först
-          tänkt som en engångsgrej – men växte snabbt till något större än vi
-          någonsin hade räknat med.
-        </p>
+       
 
         {/* Vår resa */}
-        <section className="mb-20 bg-white/70 backdrop-blur-sm border border-[#e2c9a7] rounded-2xl shadow-md p-10 leading-relaxed space-y-5">
-          <h2 className="text-3xl font-rye text-[#5b3a29] mb-3">
-            Vår resa
-          </h2>
+        <section className="mb-12 md:mb-20 bg-white border border-[#e2c9a7] rounded-3xl shadow-md overflow-hidden">
+          <div className="grid lg:grid-cols-2">
+            <motion.img
+              src={hanna}
+              alt="Vår resa"
+              className="w-full h-72 sm:h-96 lg:h-full object-cover cursor-pointer"
+              onClick={() => setActiveImage(hero2)}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            />
 
-          <p>
-            Det började egentligen som ett skämt – en grill, några vänner och ett
-            test under Bergslagens loppishelg 2021. Men det visade sig snabbt att
-            våra burgare var här för att stanna.
-          </p>
+            <div className="p-6 md:p-10 leading-relaxed space-y-5">
+              <h2 className="text-3xl md:text-4xl font-rye text-[#5b3a29]">
+                Vår resa
+              </h2>
 
-          <p>
-            På vårt allra första event, med bara en grill, dök runt 300 personer
-            upp på gården. På bara några timmar var allt slut.
-          </p>
+              <p className="text-lg">
+                Det började egentligen som ett skämt – en grill, några vänner
+                och ett test under Bergslagens loppishelg 2021. Men det visade
+                sig snabbt att våra burgare var här för att stanna.
+              </p>
 
-          <p>
-            Det blev startskottet för något mycket större. Idag, under
-            högsäsong, kommer tusentals människor för att äta våra burgare – och
-            hänga i vår lada.
-         
-          </p>
+              <p className="text-lg">
+                På vårt allra första event, med bara en grill, dök runt 300
+                personer upp på gården. På bara några timmar var allt slut.
+              </p>
 
-         <p>
-  Vill man följa hela resan – allt bakom kulisserna, bygget av ladan
-  och livet här ute – så finns den på vår YouTube-kanal
-  <a href="https://www.youtube.com/feed/subscriptions/UCaIAV31L9DGmwuf_6Q8k2Ig" target="_blank"><strong> Bonnalife</strong></a>.
-</p>
+              <p className="text-lg">
+                Det blev startskottet för något mycket större. Idag, under
+                högsäsong, kommer tusentals människor för att äta våra burgare –
+                och hänga i vår lada.
+              </p>
 
-
-
-        </section>
-{/* Renovering av ladans tak */}
-<section className="mb-20 bg-white border border-[#e2c9a7] rounded-2xl shadow-md p-10 leading-relaxed space-y-6">
-  <h2 className="text-3xl font-rye text-[#5b3a29] mb-3 text-center">
-    Renovering av ladans tak
-  </h2>
-
-  <div className="flex flex-col items-center space-y-6">
-    <img
-      src={ladaImg}
-      alt="Renovering av ladans tak"
-      className="rounded-lg shadow-md max-w-full"
-    />
-
-    <p className="text-lg max-w-3xl text-center">
-      Med stöd från EU och Leader Bergslagen har vi renoverat den del av ladans
-      tak som var i störst behov av åtgärd. Syftet var att säkra byggnaden och
-      skapa förutsättningar för att utveckla ladan till en
-      året-runt-anpassad mötesplats för evenemang, marknader och samarbeten.
-    </p>
-
-    <img
-      src={liggandeImg}
-      alt="Renoverad taksektion"
-      className="rounded-lg shadow-md max-w-full"
-    />
-
-    <p className="text-lg max-w-3xl text-center">
-      Renoveringen har stärkt den bärande konstruktionen och gett ett nytt,
-      hållbart tak som gör det möjligt att fortsätta utveckla gården som en
-      samlingsplats för både lokala aktörer och besökare.
-    </p>
-  </div>
-</section>
-
-        {/* När har ladan öppet? */}
-        <section className="mb-20 bg-[#fff5e8] border border-[#f1c07b] rounded-2xl shadow-inner p-10">
-          <h2 className="text-3xl font-rye text-[#f8a109] mb-4 text-center">
-            När har ladan öppet?
-          </h2>
-
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto mb-4">
-            Vi håller öppet från våren och hela sommaren. Under vintern kan det
-            även dyka upp enstaka event i ladan – och då berättar vi om det på
-            våra sociala medier.
-          </p>
-
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto">
-            Vi går också ut med våra öppettider för ladan våren 2026 när det
-            närmar sig.
-          </p>
-
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto mt-4">
-            Vill du hyra ladan för ett företagsevent eller något kul med
-            vännerna? Hör av er så kollar vi möjligheterna.
-          </p>
+              <p className="text-lg">
+                Vill man följa hela resan – allt bakom kulisserna, bygget av
+                ladan och livet här ute – så finns den på vår YouTube-kanal{" "}
+                <a
+                  href="https://www.youtube.com/feed/subscriptions/UCaIAV31L9DGmwuf_6Q8k2Ig"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold underline hover:text-[#c57a00]"
+                >
+                  Bonnalife
+                </a>
+                .
+              </p>
+            </div>
+          </div>
         </section>
 
-        {/* CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg mb-4">
-            Vill du veta mer eller boka oss till ditt event?
-          </p>
-          <Link
-            to="/catering"
-            className="inline-block bg-[#f8a409ff] text-white px-8 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-[#7a4a30] transition"
-          >
-            Catering →
-          </Link>
-        </div>
-      </div>
+        {/* Renovering */}
+        <section className="bg-white border border-[#e2c9a7] rounded-3xl shadow-md p-6 md:p-10 leading-relaxed">
+          <div className="text-center max-w-3xl mx-auto mb-8">
+            <h2 className="text-3xl md:text-4xl font-rye text-[#5b3a29] mb-4">
+              Renovering av ladans tak
+            </h2>
+
+            <p className="text-lg">
+              Med stöd från EU och Leader Bergslagen har vi renoverat den del av
+              ladans tak som var i störst behov av åtgärd.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <motion.img
+              src={ladaImg}
+              alt="Renovering av ladans tak"
+              className="w-full h-72 md:h-96 object-cover rounded-2xl shadow-md cursor-pointer"
+              onClick={() => setActiveImage(ladaImg)}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            />
+
+            <motion.img
+  src={liggandeImg}
+  alt="Renoverad taksektion"
+  className="w-full h-72 md:h-96 object-contain bg-[#fdf8f3] rounded-2xl shadow-md cursor-pointer"
+  onClick={() => setActiveImage(liggandeImg)}
+  whileHover={{ scale: 1.02 }}
+  transition={{ duration: 0.3 }}
+/>
+          </div>
+
+          <div className="max-w-4xl mx-auto text-center space-y-5">
+            <p className="text-lg">
+              Syftet var att säkra byggnaden och skapa förutsättningar för att
+              utveckla ladan till en året-runt-anpassad mötesplats för
+              evenemang, marknader och samarbeten.
+            </p>
+
+            <p className="text-lg">
+              Renoveringen har stärkt den bärande konstruktionen och gett ett
+              nytt, hållbart tak som gör det möjligt att fortsätta utveckla
+              gården som en samlingsplats för både lokala aktörer och besökare.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      {/* MODAL */}
+      {activeImage && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4"
+          onClick={() => setActiveImage(null)}
+        >
+          <motion.img
+            src={activeImage}
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.3 }}
+            className="max-w-full max-h-[90vh] rounded-2xl shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </motion.div>
+      )}
     </div>
   );
 }

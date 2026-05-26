@@ -7,6 +7,7 @@ import Burgers from "./pages/Burgers";
 import Footer from "./components/Footer";
 import Burgare from "./pages/Burgare";
 import Karta from "./pages/Karta";
+import Konsert from "./pages/Konsert";
 
 import CateringBooking from "./pages/CateringBooking";
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/cateringbooking" element={<CateringBooking />} />
             <Route path="/burgare" element={<Burgare />} />
             <Route path="/karta" element={<Karta />} />
+            <Route path="/konsert" element={<Konsert />} />
 
 
           </Routes>
